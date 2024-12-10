@@ -1,0 +1,44 @@
+/* stile della pagina welcome*/
+body{
+    background-image: url(assets/bg.jpg);
+    margin: 0;
+    height: 100vh;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.container{
+    width: 85%;
+    border: solid white;
+    margin: 0 auto;
+}
+.h1Welcome{
+    color: white;
+}
+.h1Welcome{
+    font-size: 60px;
+    font-style: outfit;
+
+}
+.h2Welcome{
+    color: #d20094;
+}
+.pWelcome{
+    color: white;
+}
+
+.ulWelcome li {
+    color: white;
+}
+.labelWelcome{
+    color: white;
+}
+.h1Welcome span, .ulWelcome li span{
+    color: white;
+    font-size: larger;
+    
+}
+
+/*fine stile pagina welcome*/
