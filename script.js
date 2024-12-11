@@ -98,4 +98,31 @@
       },
     ];
 
-   
+    /* questo è l'array del tempo orologio*/
+    const duration = 60;
+    let startTime = null;
+    const timeArray = Array.from({ length: duration }, (_, i) => i + 1);
+    const timeElement = document.getElementById('time');
+    const progressElement = document.getElementById('progress');
+    function updateProgress(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) / 1000;
+        const timeRemaining = Math.max(0, duration - elapsed);
+        const currentSecond = Math.floor(timeRemaining);
+        if (timeArray[currentSecond] !== undefined) {
+            const percentage = (timeRemaining / duration) * 360;
+            timeElement.textContent = Math.ceil(timeRemaining);
+            progressElement.style.background = "conic-gradient(" +
+                "rgba(169, 169, 169, 0.3) " + (360 - percentage) + "deg, " +  
+                "cyan " + (360 - percentage) + "deg)"; 
+        }
+        if (timeRemaining > 0) {
+            requestAnimationFrame(updateProgress);
+        } else {
+            timeElement.textContent = "0";
+        }
+    }
+    
+    requestAnimationFrame(updateProgress);
+
+    /* se qualcuno vuole toccare sia benvenuto ma affermo che è configurato bene*/
