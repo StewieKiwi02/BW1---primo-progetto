@@ -84,4 +84,18 @@ body{
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
 /*finisce qui*/
