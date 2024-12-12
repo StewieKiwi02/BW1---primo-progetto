@@ -5,27 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    </style>
   <title>epicode</title>
 </head>
 
 <body>
   <div class="container">
     <div id="header"></div> 
+    <header id="logoEpicode"> <div> <img src="assets/epicode_logo.png" alt=""></div></header>
     <main>
 
       <h1 class="h1Welcome">Welcome to <br><span>your exam</span></h1>
       <h2 class="h2Welcome"><span>Instructions</span></h2>
-      <p class="pWelcome"> we don't expect most engineers to known the answers to all of these <br>questions, so don't worry if your're
+      <p class="pWelcome"> We don't expect most engineers to known the answers to all of these <br>questions, so don't worry if your're
         unsure of a few of them.</p>
       <ul class="ulWelcome">
         <li>Each question in <span>timed</span> and can only be <span>answered once.</span></li>
         <li>Changing browser tab or opening other windows will <span>invalidate the question.</span></li>
         <li>This exam will take approx. <span>0-5 minutes.</span></li>
       </ul>
-      <div>
+      <div class="finalDivWelcome">
         <form action="#">
           <label class="labelWelcome">
-            <input name="acceptTerms" type="checkbox" value="true" id="proceedCheckbox">
+            <input name="acceptTerms" type="checkbox" value="true" id="proceedCheckbox" class="proceedCheckbox">
             I promise to answer myself without help from anyone
           </label>
         </form>

@@ -14,88 +14,116 @@ body{
     border: solid white;
     margin: 0 auto;
 }
+header img{ 
+    width: 12%;
+    margin-top: 40px;
+    border: solid red;
+}
 .h1Welcome{
     color: white;
+    margin-bottom: 25px;
+    
 }
 .h1Welcome{
-    font-size: 60px;
-    font-style: outfit;
-
+    margin-top: 80px;
+    font-size: 80px;
+    font-family: outfit;
+    font-weight: 300;
+    
 }
+
+
 .h2Welcome{
+    font-size: 2em;
     color: #d20094;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    font-family: outfit;
+    font-weight:600;
 }
 .pWelcome{
+    margin-top: 0;
     color: white;
 }
 
+.ulWelcome{
+    margin-top: 45px;
+  margin-left: -10px;  
+}
 .ulWelcome li {
+    
+    font-weight: 400;
     color: white;
 }
 .labelWelcome{
     color: white;
+    margin-top: 300px;
 }
+
 .h1Welcome span, .ulWelcome li span{
     color: white;
     font-size: larger;
+    font-weight: bold;
     
+}
+.finalDivWelcome{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-top: 70px;
+    
+}
+#proceedButton{
+    padding: 20px;
+    padding: 20px 60px; 
+    font-size: 20px; 
+    font-weight: bold; 
+    background-color: #00ffff; 
+    color: black; 
+    border: none; 
+    border-radius: 0px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    
+}
+#proceedButton:hover {
+    background-color: #00ffff; 
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; 
+}
+
+.proceedCheckbox {
+    width: 20px; 
+    height: 20px; 
+    accent-color: #00ffff; 
+    margin-right: 10px; 
+    
+    appearance: none; 
+    -webkit-appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border: 3px solid white; 
+    border-radius: 0px; 
+    background-color: transparent;
+    margin-bottom: -5px;
+}
+
+.proceedCheckbox:checked::after {
+    content: ''; 
+    position: absolute;
+    width: 5px; 
+    height: 10px; 
+    border: solid white; 
+    border-width: 0 2px 2px 0; 
+    transform: rotate(45deg); 
+    top: 630px; 
+    left: 105px; 
+}
+
+.labelWelcome {
+    font-size: 16px; 
+    color: white;
+   
 }
 
 /*fine stile pagina welcome*/
-
-/* questo è il css se qualcuno vuole modificare faccia pure dell'orologio*/
-.circle {
-    position: fixed;
-    width: 142px;
-    height: 142px;    
-}
-
-.progress {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-.inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 110px;
-    height: 110px;
-    background: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    flex-direction: column;
-}
-
-.inner span { 
-    font-size: 8px;
-}
-
-.inner span.remaining {
-    font-size: 47px;
-    font-weight: bold;
-}
-
-.hidden {
-    display: none;
-  }
-  
-  .visible {
-    display: block;
-  }
-  
-  .question-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-/*finisce qui*/
