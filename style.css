@@ -17,7 +17,7 @@ body{
 header img{ 
     width: 12%;
     margin-top: 40px;
-    border: solid red;
+    border: solid rgb(30, 13, 161);
 }
 .h1Welcome{
     color: rgb(128, 3, 3);
