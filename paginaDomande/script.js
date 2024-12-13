@@ -1,9 +1,5 @@
 const questions = [
-    {
-        question: "How can I create a <br><span class='spanH3'>checkbox in HTML?</span>",
-        correct_answer: "<input type='checkbox'>",
-        incorrect_answers: ["<input type='check'>", "<checkbox>", "<input type='button'>"]
-    },
+ 
     {
         question: "What does CPU stand for?",
         correct_answer: "Central Processing Unit",
