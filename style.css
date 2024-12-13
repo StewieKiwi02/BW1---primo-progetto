@@ -11,16 +11,14 @@ body{
 }
 .container{
     width: 85%;
-    border: solid white;
     margin: 0 auto;
 }
 header img{ 
-    width: 12%;
-    margin-top: 40px;
-    border: solid rgb(64, 19, 168);
+    width:150px ;
+    margin-top: 60px;
 }
 .h1Welcome{
-    color: rgb(128, 3, 3);
+    color: white;
     margin-bottom: 25px;
     
 }

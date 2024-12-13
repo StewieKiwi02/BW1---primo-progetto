@@ -99,3 +99,21 @@
     ];
 
    
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById('proceedCheckbox');
+      const proceedButton = document.getElementById('proceedButton');
+    
+    
+      proceedButton.addEventListener('click', function() {
+        handleProceed(checkbox, 'next_page.html');
+      });
+    
+    
+      function handleProceed(checkboxElement, nextPageUrl) {
+        if (checkboxElement.checked) {
+          window.location.href = 'paginaDomande/paginaDomande.html';
+        } else {
+          alert('per favore accetta i termini e poi premi il tasto "proceed".');
+        }
+      }
+    });
