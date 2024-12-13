@@ -63,8 +63,8 @@ const timeElement = document.getElementById('time');
 const progressElement = document.getElementById('progress');
 const questionContainers = document.querySelectorAll(".h3Answer");
 const answerContainers = document.querySelectorAll(".conteinerAnswer");
-const footerElement = document.getElementById('footer'); /*Elemento footer per il contatore*/
-function updateFooterCounter() {
+const footerElement = document.getElementById('footerQuiz'); /*Elemento footer per il contatore*/
+function updatefooterQuizCounter() {
     footerElement.innerHTML = "<p>QUESTION " + (currentQuestionIndex + 1) + " <span class='spanFooterCounter'>/ " + questions.length + "</span></p>";
 }
 
@@ -96,7 +96,7 @@ function displayQuestion() {
     resetTimer();
 
     /* Aggiorna il contatore delle domande nel footer*/
-    updateFooterCounter();
+    updatefooterQuizCounter();
 }
 
 function checkAnswer(selectedAnswer, correctAnswer) {
