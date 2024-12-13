@@ -8,33 +8,31 @@
 </head>
 <body>
     
-<header id="header">
-    <img src="IMG/epicode_logo.png" alt="logo epicode" >
-</header>
-
 
 
 
 <body>
-<main id="main">
-    <form action="#" id="form">
-        
-        
-            <div class="circle">
-                <div class="progress" id="progress"></div>
-                <div class="inner">
-                    <span>SECONDS</span>
-                    <span class="remaining" id="time">60</span>
-                    <span>REMAINING</span>
-                </div>
+    <header id="header">
+        <img src="IMG/epicode_logo.png" alt="logo epicode" >
+        <div class="circle">
+            <div class="progress" id="progress"></div>
+            <div class="inner">
+                <span>SECONDS</span>
+                <span class="remaining" id="time">60</span>
+                <span>REMAINING</span>
+            </div>
+    </header>
 
+
+    <main id="main">
+    <form action="#" id="form">
                 <div class="question-container">
                 <h3 class="h3Answer">How can I create a <br><span class="spanH3">checkbox in HTML?</span></h3>
-                    <div class="conteinerAnswer">
-                    <label><input type="button" name="answer1"value="<input type='check'>" class="inputButton"></label>
-                    <label><input type="button" name="answer1" value="<input type='checkbox'>" class="inputButton"></label>
-                    <label><input type="button" name="answer1" value="<checkbox>" class="inputButton"></label>
-                    <label><input type="button" name="answer1" value="<input type='button'>" class="inputButton"></label>
+                <div class="conteinerAnswer">
+                     <label><input type="button" name="answer1" value="<input type='check'>" class="inputButton"></label>
+                     <label><input type="button" name="answer1" value="<input type='checkbox'>" class="inputButton"></label>
+                     <label><input type="button" name="answer1" value="<checkbox>" class="inputButton"></label>
+                     <label><input type="button" name="answer1" value="<input type='button'>" class="inputButton"></label>
                 </div>
                     
               <h3 class="h3Answer">What does CPU stand for?</h3>
@@ -109,7 +107,7 @@
                   <label><input type="button" name="answer11" value="True" class="inputButton"></label>
                   <label><input type="button" name="answer11" value="False" class="inputButton"></label> 
               </div>
-          fdgfdgdf
+    
              
               <h3 class="h3Answer">Which programming language shares its name with an island in Indonesia?</h3>
               <div class="conteinerAnswer">
@@ -122,10 +120,8 @@
             </div>
     </form>
 </main>
-</body>
-
 <footer id="footer">
-    <p>QUESTION 1 <span class="spanFooterCounter">/ 10</span></p>
+    <p>QUESTION <span id="currentQuestion">1</span> <span class="spanFooterCounter">/ 10</span></p>
 </footer>
 <script src="script.js"></script>
 </body>

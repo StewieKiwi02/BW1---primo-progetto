@@ -1,5 +1,10 @@
 const questions = [
     {
+        question: "How can I create a <br><span class='spanH3'>checkbox in HTML?</span>",
+        correct_answer: "<input type='checkbox'>",
+        incorrect_answers: ["<input type='check'>", "<checkbox>", "<input type='button'>"]
+    },
+    {
         question: "What does CPU stand for?",
         correct_answer: "Central Processing Unit",
         incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"]
@@ -52,32 +57,35 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let timer = 60; /* Durata del timer in secondi */
-let elapsed = 0; /* Tempo trascorso in millisecondi */
+let timer = 60;  /* Durata del timer in secondi */
+let elapsed = 0;  /* Tempo trascorso in millisecondi */
 let timerInterval;
 let progressInterval;
-
+let score = 0;  /* Variabili per tenere traccia del punteggio*/
+let wrongAnswers = 0;  /*Variabili per tenere traccia delle risposte sbagliate*/
 const timeElement = document.getElementById('time');
 const progressElement = document.getElementById('progress');
 const questionContainers = document.querySelectorAll(".h3Answer");
 const answerContainers = document.querySelectorAll(".conteinerAnswer");
+const footerElement = document.getElementById('footer'); /*Elemento footer per il contatore*/
+function updateFooterCounter() {
+    footerElement.innerHTML = "<p>QUESTION " + (currentQuestionIndex + 1) + " <span class='spanFooterCounter'>/ " + questions.length + "</span></p>";
+}
+
 
 function displayQuestion() {
-    /* Nascondi tutte le domande */
+    /* Nascondi tutte le domande e risposte*/
     questionContainers.forEach(question => question.classList.add('hidden'));
     answerContainers.forEach(container => container.classList.add('hidden'));
 
-    /* Mostra la domanda corrente */
+    /*Mostra la domanda corrente*/
     questionContainers[currentQuestionIndex].classList.remove('hidden');
     answerContainers[currentQuestionIndex].classList.remove('hidden');
-
     const currentQuestion = questions[currentQuestionIndex];
     const allAnswers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
-
-    /* Mescola le risposte */
+    /* Mescola le risposte*/
     allAnswers.sort(() => Math.random() - 0.5);
-
-    /* Visualizza le risposte */
+    /*Visualizza le risposte*/
     answerContainers[currentQuestionIndex].innerHTML = '';
     for (let i = 0; i < allAnswers.length; i++) {
         const button = document.createElement('input');
@@ -88,25 +96,25 @@ function displayQuestion() {
         answerContainers[currentQuestionIndex].appendChild(button);
     }
 
-    /* Riporta il timer a 60 secondi per ogni domanda */
+    /* Riporta il timer a 60 secondi per ogni domanda*/
     resetTimer();
+
+    /* Aggiorna il contatore delle domande nel footer*/
+    updateFooterCounter();
 }
 
 function checkAnswer(selectedAnswer, correctAnswer) {
     if (selectedAnswer === correctAnswer) {
-        alert("Correct!");
+        score++;  /* Incrementa il punteggio per risposta corretta*/
     } else {
-        alert("Wrong!");
+        wrongAnswers++;  /* Incrementa il conteggio delle risposte sbagliate*/
     }
-
-    /* Passa alla prossima domanda */
+    /* Passa immediatamente alla prossima domanda senza ritardo*/
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         displayQuestion();
     } else {
-        alert("Quiz completato!");
-        clearInterval(progressInterval);
-        clearInterval(timerInterval);
+        displayFinalResults();
     }
 }
 
@@ -122,28 +130,39 @@ function updateTimer() {
     } else {
         clearInterval(progressInterval);
         clearInterval(timerInterval);
-        alert("Tempo scaduto!");
+        wrongAnswers++;  /* Se il tempo scade, considera la risposta come errata*/
+        /*Passa alla prossima domanda*/
+        setTimeout(() => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            } else {
+                displayFinalResults();
+            }
+        }, 1000);
     }
 }
 
 function resetTimer() {
-    /* Resetta i valori del timer e della barra */
+    /* Resetta i valori del timer e della barra*/
     timer = 60;
     elapsed = 0;
     timeElement.textContent = timer;
-    progressElement.style.background = `conic-gradient(cyan 0deg, rgba(169, 169, 169, 0.3) 0deg)`;
-
-    /* Avvia gli intervalli per aggiornare barra e timer */
+    progressElement.style.background = `conic-gradient(#00FFFF 0deg, rgba(169, 169, 169, 0.3) 0deg)`;
+    /* Avvia gli intervalli per aggiornare barra e timer*/
     clearInterval(progressInterval);
     clearInterval(timerInterval);
     progressInterval = setInterval(updateTimer, 50);
 }
 
 function startQuiz() {
+    score = 0;  /* Reset del punteggio*/
+    wrongAnswers = 0;  /*Reset delle risposte sbagliate*/
     resetTimer(); 
     displayQuestion();
 }
 
 window.onload = startQuiz;
 
-   
+
+
